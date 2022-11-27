@@ -8,7 +8,6 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
-import { fileURLToPath } from "url";
 
 /*configuration */
 const __filename = fileURLToPath(import.meta.url);
@@ -45,4 +44,5 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-  });
+  })
+  .catch((error) => console.log(`${error}did not connect`));
