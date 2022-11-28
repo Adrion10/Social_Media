@@ -36,3 +36,6 @@ export const register = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+/** Logging In */
+
+export const loggin = async (req, res) => {};
