@@ -33,3 +33,13 @@ export const getFeedPosts = async (req, res) => {
     res.status(403).json({ message: err.message });
   }
 };
+
+export const getUserPost = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const post = await Post.find({ userId });
+    res.status(201).json(post);
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+};
