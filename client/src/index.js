@@ -6,7 +6,7 @@ import authReducer from "./state";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import {
-  presistStore,
+  persistStore,
   presistReducer,
   FLUSH,
   REHYDRATE,
@@ -23,10 +23,23 @@ const persistConfig = {
   version: 1,
 };
 const persistedReducer = presistReducer(persistConfig, authReducer);
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PRUGE, REGISTER],
+      },
+    }),
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <App />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
