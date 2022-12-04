@@ -11,14 +11,18 @@ import { themeSettings } from "./theme";
 import "./App.css";
 
 function App() {
+  const mode = useSelector((state) => state.mode);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
       <BrowserRouter>
-        <Routes>
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/profile:userId" element={<ProfilePage />} />
-        </Routes>
+        <ThemeProvide theme={theme}>
+          <Routes>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/profile:userId" element={<ProfilePage />} />
+          </Routes>
+        </ThemeProvide>
       </BrowserRouter>
     </div>
   );
