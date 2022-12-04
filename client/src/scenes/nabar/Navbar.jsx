@@ -58,6 +58,13 @@ const Navbar = () => {
         >
           Sociopedia
         </Typography>
+        {isNonMobileScreens && (
+          <FlexBetween
+            backgroundColor={neutralLight}
+            borderRadius="9px"
+            gap="3rem"
+          ></FlexBetween>
+        )}
       </FlexBetween>
     </FlexBetween>
   );
