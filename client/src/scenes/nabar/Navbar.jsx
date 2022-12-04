@@ -37,10 +37,14 @@ const Navbar = () => {
   const dark = theme.palette.neutral.dark
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
-  const alt = theme.palette.background.alt
+  const alt = theme.palette.background.alt;
+
+  const fullName = `${user.firstName} ${user.lastName}`
 
   const handleLogout = () => {
-  return <div>Navbar</div>;
+  return <FlexBetween padding= "1rem 6% backgroundColor = {alt">
+
+  </FlexBetween>
 };
 
 export default Navbar;
