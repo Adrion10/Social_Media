@@ -101,7 +101,10 @@ const Navbar = () => {
                   backgroundColor: neutralLight,
                 },
               }}
-            ></Select>
+              input={<InputBase />}
+            >
+              <MenuItem value={fullName}></MenuItem>
+            </Select>
           </FromControl>
         </FlexBetween>
       ) : (
