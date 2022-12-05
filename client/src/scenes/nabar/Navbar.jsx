@@ -117,6 +117,19 @@ const Navbar = () => {
           <Menu />
         </IconButton>
       )}
+      {/* mobile navbar */}
+      {!isNonMobileScreens && isMobileMenuToggled && (
+        <Box
+          position="fixed"
+          bottom="0"
+          right="0"
+          height="100%"
+          zIndex="10"
+          maxWidth="500px"
+          minWidth="300px"
+          backgroundColor={background}
+        ></Box>
+      )}
     </FlexBetween>
   );
 };
