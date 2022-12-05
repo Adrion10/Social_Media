@@ -73,6 +73,19 @@ const Navbar = () => {
         )}
       </FlexBetween>
       {/* Desktop navbar */}
+      {isNonMobileScreens ? (
+        <FlexBetween gap="2rem">
+          <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+              <DarkMode sx={{ fontSize: "25px" }} />
+            ) : (
+              <LightMode sx={{ color: dark, fontSize: "25px" }} />
+            )}
+          </IconButton>
+        </FlexBetween>
+      ) : (
+        <IconButton></IconButton>
+      )}
     </FlexBetween>
   );
 };
