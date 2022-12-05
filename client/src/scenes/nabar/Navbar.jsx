@@ -111,7 +111,11 @@ const Navbar = () => {
           </FromControl>
         </FlexBetween>
       ) : (
-        <IconButton></IconButton>
+        <IconButton
+          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+        >
+          <Menu />
+        </IconButton>
       )}
     </FlexBetween>
   );
