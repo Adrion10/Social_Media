@@ -103,7 +103,10 @@ const Navbar = () => {
               }}
               input={<InputBase />}
             >
-              <MenuItem value={fullName}></MenuItem>
+              <MenuItem value={fullName}>
+                <Typography>{fullName} </Typography>
+              </MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Logout</MenuItem>
             </Select>
           </FromControl>
         </FlexBetween>
