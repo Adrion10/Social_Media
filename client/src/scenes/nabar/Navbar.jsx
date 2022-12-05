@@ -64,9 +64,15 @@ const Navbar = () => {
             borderRadius="9px"
             gap="3rem"
             padding="0.1rem 1.5rem"
-          ></FlexBetween>
+          >
+            <InputBase placeholder="Search..." />
+            <IconButton>
+              <Search />
+            </IconButton>
+          </FlexBetween>
         )}
       </FlexBetween>
+      {/* Desktop navbar */}
     </FlexBetween>
   );
 };
