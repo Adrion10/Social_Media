@@ -58,6 +58,8 @@ const Form = () => {
     for (let value in values) {
       formData.append(value, values[value]);
     }
+    formData.append("picturePath", values.picture.name);
+    
   return <div>Form</div>;
 };
 
