@@ -92,6 +92,10 @@ const Form = () => {
       navigate("/home");
     }
   };
+  const handleFormSubmit = async (values, onSubmitProps) => {
+    if (isLogin) await login(values, onSubmitProps);
+    if (isRegister) await register(values, onSubmitProps);
+  };
 
   return <div>Form</div>;
 };
