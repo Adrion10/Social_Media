@@ -38,6 +38,10 @@ const initialValuesRegister = {
   occupation: "",
   picture: "",
 };
+const initialValuesLogin = {
+  email: "",
+  password: "",
+};
 
 const Form = () => {
   const [pageType, setPageType] = useState("login");
