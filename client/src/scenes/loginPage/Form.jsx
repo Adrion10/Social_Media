@@ -156,7 +156,7 @@ const Form = () => {
                   helperText={touched.location && errors.location}
                   sx={{ gridColumn: "span 4" }}
                 />
-                          <TextField
+                <TextField
                   label="Occupation"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -182,6 +182,27 @@ const Form = () => {
                     }
                   >
                     {({ getRootProps, getInputProps }) => (
+                       <Box
+                       {...getRootProps()}
+                       border={`2px dashed ${palette.primary.main}`}
+                       p="1rem"
+                       sx={{ "&:hover": { cursor: "pointer" } }}
+                     >
+                       <input {...getInputProps()} />
+                       {!values.picture ? (
+                         <p>Add Picture Here</p>
+                       ) : (
+                         <FlexBetween>
+                           <Typography>{values.picture.name}</Typography>
+                           <EditOutlinedIcon />
+                         </FlexBetween>
+                       )}
+                     </Box>
+                   )}
+                 </Dropzone>
+               </Box>
+             </>
+           )}
   )
 };
 
