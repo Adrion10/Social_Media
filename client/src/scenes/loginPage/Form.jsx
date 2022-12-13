@@ -174,6 +174,14 @@ const Form = () => {
                   borderRadius="5px"
                   p="1rem"
                 >
+                  <Dropzone
+                    acceptedFiles=".jpg,.jpeg,.png"
+                    multiple={false}
+                    onDrop={(acceptedFiles) =>
+                      setFieldValue("picture", acceptedFiles[0])
+                    }
+                  >
+                    {({ getRootProps, getInputProps }) => (
   )
 };
 
