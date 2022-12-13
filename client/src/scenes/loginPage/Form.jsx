@@ -122,6 +122,15 @@ const Form = () => {
             "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
           }}
         >
+           {isRegister && (
+              <>
+                <TextField
+                  label="First Name"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.firstName}
+                  name="firstName"
+                  error={
   )
 };
 
