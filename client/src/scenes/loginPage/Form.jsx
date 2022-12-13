@@ -97,7 +97,14 @@ const Form = () => {
     if (isRegister) await register(values, onSubmitProps);
   };
 
-  return <div>Form</div>;
+  return (
+      <Formik
+      onSubmit={handleFormSubmit}
+      initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
+      validationSchema={isLogin ? loginSchema : registerSchema}
+    >
+      
+  )
 };
 
 export default Form;
