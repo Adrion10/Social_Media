@@ -245,6 +245,15 @@ const Form = () => {
                 setPageType(isLogin ? "register" : "login");
                 resetForm();
               }}
+              sx={{
+                textDecoration: "underline",
+                color: palette.primary.main,
+                "&:hover": {
+                  cursor: "pointer",
+                  color: palette.primary.light,
+                },
+              }}
+            >
   )
 };
 
