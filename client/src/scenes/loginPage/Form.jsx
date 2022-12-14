@@ -225,6 +225,21 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
           </Box>
+           {/* BUTTONS */}
+           <Box>
+            <Button
+              fullWidth
+              type="submit"
+              sx={{
+                m: "2rem 0",
+                p: "1rem",
+                backgroundColor: palette.primary.main,
+                color: palette.background.alt,
+                "&:hover": { color: palette.primary.main },
+              }}
+            >
+              {isLogin ? "LOGIN" : "REGISTER"}
+            </Button>
   )
 };
 
