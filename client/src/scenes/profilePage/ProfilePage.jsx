@@ -22,6 +22,12 @@ const ProfilePage = () => {
     const data = await response.json();
     setUser(data);
   };
+
+  useEffect(() => {
+    getUser();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!user) return null;
   return <div>ProfilePage</div>;
 };
 
