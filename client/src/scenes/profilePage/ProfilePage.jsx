@@ -28,7 +28,22 @@ const ProfilePage = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!user) return null;
-  return <div>ProfilePage</div>;
+  return (
+  <Box>
+    <Navbar />
+    <Box
+      width="100%"
+      padding="2rem 6%"
+      display={isNonMobileScreens ? "flex" : "block"}
+      gap="2rem"
+      justifyContent="center"
+    >
+      <Box flexBasis={isNonMobileScreens ? "26%" : undefined}>
+        <UserWidget userId={userId} picturePath={user.picturePath} />
+        <Box m="2rem 0" />
+        <FriendListWidget userId={userId} />
+      </Box>
+      )
 };
 
 export default ProfilePage;
