@@ -98,7 +98,7 @@ const Form = () => {
   };
 
   return (
-      <Formik
+    <Formik
       onSubmit={handleFormSubmit}
       initialValues={isLogin ? initialValuesLogin : initialValuesRegister}
       validationSchema={isLogin ? loginSchema : registerSchema}
@@ -114,15 +114,15 @@ const Form = () => {
         resetForm,
       }) => (
         <form onSubmit={handleSubmit}>
-        <Box
-          display="grid"
-          gap="30px"
-          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-          sx={{
-            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-          }}
-        >
-           {isRegister && (
+          <Box
+            display="grid"
+            gap="30px"
+            gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+            sx={{
+              "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+            }}
+          >
+            {isRegister && (
               <>
                 <TextField
                   label="First Name"
@@ -146,7 +146,7 @@ const Form = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                 <TextField
+                <TextField
                   label="Location"
                   onBlur={handleBlur}
                   onChange={handleChange}
@@ -168,7 +168,7 @@ const Form = () => {
                   helperText={touched.occupation && errors.occupation}
                   sx={{ gridColumn: "span 4" }}
                 />
-                    <Box
+                <Box
                   gridColumn="span 4"
                   border={`1px solid ${palette.neutral.medium}`}
                   borderRadius="5px"
@@ -182,27 +182,27 @@ const Form = () => {
                     }
                   >
                     {({ getRootProps, getInputProps }) => (
-                       <Box
-                       {...getRootProps()}
-                       border={`2px dashed ${palette.primary.main}`}
-                       p="1rem"
-                       sx={{ "&:hover": { cursor: "pointer" } }}
-                     >
-                       <input {...getInputProps()} />
-                       {!values.picture ? (
-                         <p>Add Picture Here</p>
-                       ) : (
-                         <FlexBetween>
-                           <Typography>{values.picture.name}</Typography>
-                           <EditOutlinedIcon />
-                         </FlexBetween>
-                       )}
-                     </Box>
-                   )}
-                 </Dropzone>
-               </Box>
-             </>
-           )}
+                      <Box
+                        {...getRootProps()}
+                        border={`2px dashed ${palette.primary.main}`}
+                        p="1rem"
+                        sx={{ "&:hover": { cursor: "pointer" } }}
+                      >
+                        <input {...getInputProps()} />
+                        {!values.picture ? (
+                          <p>Add Picture Here</p>
+                        ) : (
+                          <FlexBetween>
+                            <Typography>{values.picture.name}</Typography>
+                            <EditOutlinedIcon />
+                          </FlexBetween>
+                        )}
+                      </Box>
+                    )}
+                  </Dropzone>
+                </Box>
+              </>
+            )}
             <TextField
               label="Email"
               onBlur={handleBlur}
@@ -225,8 +225,8 @@ const Form = () => {
               sx={{ gridColumn: "span 4" }}
             />
           </Box>
-           {/* BUTTONS */}
-           <Box>
+          {/* BUTTONS */}
+          <Box>
             <Button
               fullWidth
               type="submit"
@@ -254,7 +254,15 @@ const Form = () => {
                 },
               }}
             >
-  )
+              {isLogin
+                ? "Don't have an account? Sign Up here."
+                : "Already have an account? Login here."}
+            </Typography>
+          </Box>
+        </form>
+      )}
+    </Formik>
+  );
 };
 
 export default Form;
