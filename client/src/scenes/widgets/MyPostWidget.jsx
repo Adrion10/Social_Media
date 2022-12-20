@@ -25,7 +25,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 
-const MyPostWidget = () => {
+const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
   const [isImage, setIsImage] = useState(false);
   const [image, setImage] = useState(null);
@@ -45,6 +45,7 @@ const MyPostWidget = () => {
       formData.append("picture", image);
       formData.append("picturePath", image.name);
     }
+
     const response = await fetch(`http://localhost:3001/posts`, {
       method: "POST",
       headers: { Authorization: `Bearer ${token}` },
@@ -116,6 +117,7 @@ const MyPostWidget = () => {
           </Dropzone>
         </Box>
       )}
+
       <Divider sx={{ margin: "1.25rem 0" }} />
 
       <FlexBetween>
@@ -128,6 +130,7 @@ const MyPostWidget = () => {
             Image
           </Typography>
         </FlexBetween>
+
         {isNonMobileScreens ? (
           <>
             <FlexBetween gap="0.25rem">
@@ -139,6 +142,7 @@ const MyPostWidget = () => {
               <AttachFileOutlined sx={{ color: mediumMain }} />
               <Typography color={mediumMain}>Attachment</Typography>
             </FlexBetween>
+
             <FlexBetween gap="0.25rem">
               <MicOutlined sx={{ color: mediumMain }} />
               <Typography color={mediumMain}>Audio</Typography>
@@ -149,6 +153,7 @@ const MyPostWidget = () => {
             <MoreHorizOutlined sx={{ color: mediumMain }} />
           </FlexBetween>
         )}
+
         <Button
           disabled={!post}
           onClick={handlePost}
