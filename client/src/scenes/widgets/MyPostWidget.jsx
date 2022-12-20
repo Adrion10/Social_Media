@@ -93,7 +93,7 @@ const MyPostWidget = () => {
                   width="100%"
                   sx={{ "&:hover": { cursor: "pointer" } }}
                 >
-                    <input {...getInputProps()} />
+                  <input {...getInputProps()} />
                   {!image ? (
                     <p>Add Image Here</p>
                   ) : (
@@ -103,6 +103,19 @@ const MyPostWidget = () => {
                     </FlexBetween>
                   )}
                 </Box>
+                {image && (
+                  <IconButton
+                    onClick={() => setImage(null)}
+                    sx={{ width: "15%" }}
+                  >
+                    <DeleteOutlined />
+                  </IconButton>
+                )}
+              </FlexBetween>
+            )}
+          </Dropzone>
+        </Box>
+      )}
     </WidgetWrapper>
   );
 };
