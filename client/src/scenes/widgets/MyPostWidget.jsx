@@ -158,6 +158,9 @@ const MyPostWidget = () => {
             borderRadius: "3rem",
           }}
         ></Button>
+         POST
+        </Button>
+      </FlexBetween>
     </WidgetWrapper>
   );
 };
