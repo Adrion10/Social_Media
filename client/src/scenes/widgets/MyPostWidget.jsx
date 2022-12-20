@@ -93,6 +93,16 @@ const MyPostWidget = () => {
                   width="100%"
                   sx={{ "&:hover": { cursor: "pointer" } }}
                 >
+                    <input {...getInputProps()} />
+                  {!image ? (
+                    <p>Add Image Here</p>
+                  ) : (
+                    <FlexBetween>
+                      <Typography>{image.name}</Typography>
+                      <EditOutlined />
+                    </FlexBetween>
+                  )}
+                </Box>
     </WidgetWrapper>
   );
 };
