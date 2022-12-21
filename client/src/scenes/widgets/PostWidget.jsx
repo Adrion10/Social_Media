@@ -46,7 +46,16 @@ const PostWidget = ({
     dispatch(setPost({ post: updatedPost }));
   };
 
-  return <div>PostWidget</div>;
+  return (
+    <WidgetWrapper m="2rem 0">
+      <Friend
+        friendId={postUserId}
+        name={name}
+        subtitle={location}
+        userPicturePath={userPicturePath}
+      />
+    </WidgetWrapper>
+  );
 };
 
 export default PostWidget;
